@@ -2,6 +2,10 @@
 Imaging Directory App for expert radiology
 
 # Initial Setup
+
+Before you start, make sure the following are installed locally:
+- **Docker Desktop** (or Docker Engine) with Docker Compose support
+
 From the repo root, run the setup script once to build containers, run migrations, and seed mock data (modalities, insurance plans, and imaging centers).
 
 ```bash
@@ -28,4 +32,3 @@ This single script starts:
 Then open:
 
 - Frontend UI: `http://localhost:3000`
-- Django admin: `http://localhost:8080/api/admin/`
