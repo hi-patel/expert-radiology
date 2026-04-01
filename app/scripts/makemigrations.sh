@@ -6,6 +6,6 @@ APP_ROOT="${SCRIPT_DIR}/.."
 
 cd "${APP_ROOT}"
 
-# Run makemigrations inside the dev backend container so migration files are written to the local filesystem
-docker compose -f docker-compose.dev.yml run --rm backend python manage.py makemigrations
+# Run makemigrations inside the backend container so migration files are written to the local filesystem
+docker compose run --rm backend python manage.py makemigrations
 
