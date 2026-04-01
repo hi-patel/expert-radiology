@@ -6,5 +6,5 @@ APP_ROOT="${SCRIPT_DIR}/.."
 
 cd "${APP_ROOT}"
 
-docker compose up
+docker compose up -d
 

@@ -6,5 +6,6 @@ APP_ROOT="${SCRIPT_DIR}/.."
 
 cd "${APP_ROOT}"
 
-docker compose up
+# Stop and clean up stack (including nginx)
+docker compose down
 

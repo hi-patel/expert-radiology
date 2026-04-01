@@ -28,6 +28,12 @@ bash app/scripts/setup.sh
 ```
 
 # How to Run
+For development
+```bash
+bash app/scripts/dev.sh
+```
+
+For production-like
 ```bash
 bash app/scripts/start.sh
 ```

@@ -1,2 +1,31 @@
 # expert-radiology
 Imaging Directory App for expert radiology
+
+# Initial Setup
+From the repo root, run the setup script once to build containers, run migrations, and seed mock data (modalities, insurance plans, and imaging centers).
+
+```bash
+cd app
+bash scripts/setup.sh
+```
+
+This will also reset and re-seed app data each time you run it.
+
+# Run the app
+From the repo root:
+
+```bash
+cd app
+bash scripts/start.sh
+```
+
+This single script starts:
+
+- Postgres + Django backend
+- Next.js dev server for the frontend
+- nginx proxy
+
+Then open:
+
+- Frontend UI: `http://localhost:3000`
+- Django admin: `http://localhost:8080/api/admin/`
