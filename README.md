@@ -33,5 +33,13 @@ Then open:
 
 - Frontend UI: `http://localhost:3000`
 
+### Troubleshooting
+
+If you see the following error, wait a few minutes and try setup.sh again.
+```bash
+django.db.utils.OperationalError: connection to server at "db" (172.21.0.2), port 5432 failed: Connection refused
+        Is the server running on that host and accepting TCP/IP connections?
+```
+
 # Product Roadmap
 [Roadmap.md](/product/ROADMAP.md)
