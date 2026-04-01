@@ -32,3 +32,6 @@ This single script starts:
 Then open:
 
 - Frontend UI: `http://localhost:3000`
+
+# Product Roadmap
+[Roadmap.md](/product/ROADMAP.md)
