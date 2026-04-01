@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pyc
+
+# Django stuff:
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static/
+*.pot
+*.pyc
+
+# If using Django migrations
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# Ignore local environment files
+.env
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# VSCode & IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+# End Generation Here
+```
