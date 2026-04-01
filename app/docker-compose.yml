@@ -21,6 +21,8 @@ services:
     environment:
       DJANGO_SETTINGS_MODULE: core.settings
       PYTHONUNBUFFERED: "1"
+    volumes:
+      - static_volume:/app/staticfiles
     depends_on:
       - db
 
@@ -41,10 +43,12 @@ services:
       - "8080:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - static_volume:/static
     depends_on:
       - backend
       - frontend
 
 volumes:
   db_data:
+  static_volume:
 

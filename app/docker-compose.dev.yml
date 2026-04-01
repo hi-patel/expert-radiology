@@ -3,7 +3,7 @@ version: "3.9"
 services:
   db:
     image: postgis/postgis:16-3.4
-    container_name: imaging-db
+    container_name: imaging-db-dev
     environment:
       POSTGRES_DB: imaging
       POSTGRES_USER: imaging
