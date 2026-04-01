@@ -20,6 +20,8 @@ class InsurancePlanSerializer(serializers.ModelSerializer):
 class ImagingCenterSerializer(serializers.ModelSerializer):
     modalities = ModalitySerializer(many=True, read_only=True)
     insurance_plans = InsurancePlanSerializer(many=True, read_only=True)
+    distance_from_patient_km = serializers.FloatField(read_only=True)
+    distance_from_target_km = serializers.FloatField(read_only=True)
 
     class Meta:
         model = ImagingCenter
@@ -38,6 +40,8 @@ class ImagingCenterSerializer(serializers.ModelSerializer):
             "modalities",
             "insurance_plans",
             "referral_bonus_amount",
+            "distance_from_patient_km",
+            "distance_from_target_km",
             "average_turnaround_hours",
             "patients_previously_referred",
             "public_transit_score",

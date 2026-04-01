@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import random
 from dataclasses import dataclass
+from decimal import Decimal
 from typing import Iterable, List, TypedDict
 
 from django.db import transaction
@@ -26,6 +27,7 @@ class VendorImagingCenterPayload(TypedDict):
     average_turnaround_hours: int
     patients_previously_referred: int
     public_transit_score: int | None
+    referral_bonus_amount: float | None
     modality_names: List[str]
     insurance_plan_names: List[str]
 
@@ -84,6 +86,11 @@ class ImagingCenterImportService:
                     longitude=item["longitude"],
                     patient_satisfaction_rating=item["patient_satisfaction_rating"],
                     review_count=item["review_count"],
+                    referral_bonus_amount=(
+                        Decimal(str(item["referral_bonus_amount"]))
+                        if item["referral_bonus_amount"] is not None
+                        else None
+                    ),
                     average_turnaround_hours=item["average_turnaround_hours"],
                     patients_previously_referred=item["patients_previously_referred"],
                     public_transit_score=item["public_transit_score"],
@@ -101,6 +108,11 @@ class ImagingCenterImportService:
                 center.longitude = item["longitude"]
                 center.patient_satisfaction_rating = item["patient_satisfaction_rating"]
                 center.review_count = item["review_count"]
+                center.referral_bonus_amount = (
+                    Decimal(str(item["referral_bonus_amount"]))
+                    if item["referral_bonus_amount"] is not None
+                    else None
+                )
                 center.average_turnaround_hours = item["average_turnaround_hours"]
                 center.patients_previously_referred = item[
                     "patients_previously_referred"
@@ -116,6 +128,7 @@ class ImagingCenterImportService:
                     "longitude",
                     "patient_satisfaction_rating",
                     "review_count",
+                    "referral_bonus_amount",
                     "average_turnaround_hours",
                     "patients_previously_referred",
                     "public_transit_score",
@@ -202,6 +215,15 @@ class ImagingCenterImportService:
                 random.randint(40, 100) if random.random() < 0.7 else None
             )
 
+            # Roughly one third of centers offer a referral bonus so that the
+            # UI workflows around incentives have realistic data to exercise.
+            if random.random() < 0.33:
+                referral_bonus_amount: float | None = round(
+                    random.uniform(25, 250), 2
+                )
+            else:
+                referral_bonus_amount = None
+
             modality_names = self._sample_existing_modality_names()
             insurance_plan_names = self._sample_existing_insurance_plan_names()
 
@@ -220,6 +242,7 @@ class ImagingCenterImportService:
                 average_turnaround_hours=avg_turnaround,
                 patients_previously_referred=previously_referred,
                 public_transit_score=transit_score,
+                referral_bonus_amount=referral_bonus_amount,
                 modality_names=modality_names,
                 insurance_plan_names=insurance_plan_names,
             )
