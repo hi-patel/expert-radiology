@@ -1,0 +1,50 @@
+version: "3.9"
+name: imaging-directory
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: imaging-db
+    environment:
+      POSTGRES_DB: imaging
+      POSTGRES_USER: imaging
+      POSTGRES_PASSWORD: imaging
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: imaging-backend
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    environment:
+      DJANGO_SETTINGS_MODULE: core.settings
+      PYTHONUNBUFFERED: "1"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: imaging-frontend
+    environment:
+      NODE_ENV: production
+    depends_on:
+      - backend
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: imaging-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+      - frontend
+
+volumes:
+  db_data:
+
