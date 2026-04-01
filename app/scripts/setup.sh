@@ -25,6 +25,9 @@ done
 # Run database migrations against the main stack
 docker compose run --rm backend python manage.py migrate
 
+# Reset and repopulate core application data (imaging centers, modalities, insurance)
+docker compose run --rm backend python manage.py resetappdata
+
 if [[ "${CREATE_SUPERUSER}" == "true" ]]; then
   docker compose run --rm backend python manage.py createsuperuser
 fi
