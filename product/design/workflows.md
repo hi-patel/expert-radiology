@@ -29,9 +29,13 @@
 
 **Open questions / more information needed**
 - How is the search explicitly triggered (search button, debounce on change, or on enter key)?
+  - Enter button or search button
 - Are there any required fields (e.g., must patient address be filled before searching)?
+  - Patient address is the only required field
 - Is there a map or only a list view for assessing location convenience?
+  - Only a list view. Map is future scope.
 - Are cards interactive (clickable) or purely informational?
+  - Purely informational for now
 
 ---
 
@@ -64,8 +68,11 @@
 
 **Open questions / more information needed**
 - How is distance from the physician’s office represented in the UI, or is the target address only used for internal ranking?
+  - Add an item to the result card for target address (if provided)
 - Can sorting explicitly prioritize distance from the **target address** instead of the patient address?
+  - Yes. Add that as an option in the sorting section
 - Is there any visual indicator tying a center’s location to both addresses (e.g., relative distances or map)?
+  - No, out of scope.
 
 ---
 
@@ -96,8 +103,11 @@
 
 **Open questions / more information needed**
 - Is the minimum rating filter inclusive (e.g., "4 and above") and how is that communicated?
+  - Yes. "5", "4+", "3+", "2+", "1+"
 - Is there support for showing review counts or other quality metrics alongside the rating?
+  - Good point, add review counts next to the rating.
 - Can the physician save or favorite certain high-satisfaction centers for quicker selection in the future?
+  - Yes. Add a heart icon to the right of the rating in the header. clicking it should save that location as a favorite.
 
 ---
 
@@ -127,8 +137,11 @@
 
 **Open questions / more information needed**
 - Where is **turnaround time** displayed in the card UI?
+  - Let's add it to the body
 - What is the unit/scale for turnaround time (hours, days? mean vs 90th percentile)?
+  - Data = hours. Display = hours if < 48, otherwise days.
 - Does the app surface any warnings for centers with excellent speed but poor satisfaction?
+  - Sure. In this case, the turaround time should have a warning icon next to the time. When hovering over the icon, user sees a message indicating "Location shows low satisfaction despite quick turnaround time".
 
 ---
 
@@ -156,8 +169,11 @@
 
 **Open questions / more information needed**
 - Is the referral bonus amount numeric, categorical, or just a yes/no indicator?
+  - Numeric (flat dollar amount)
 - Does checking **"Offers referral bonus"** filter strictly to bonus-offering centers, or does it also affect sorting?
+  - Strictly to bonus-offering centers.
 - Are there compliance or disclosure hints in the UI regarding referral incentives?
+  - Not in scope.
 
 ---
 
@@ -190,8 +206,11 @@
 
 **Open questions / more information needed**
 - Do results require centers to support **all** selected modalities or **any** of them?
+  - All
 - How are modality names normalized between the physician’s selection and the center’s offerings?
+  - They both need to pull from the same data set
 - Is there a way to favorite or pre-filter to centers the practice typically uses for specific modalities?
+  - Not in scope.
 
 ---
 
@@ -215,6 +234,9 @@
 
 **Open questions / more information needed**
 - How is "public accessibility" represented in data (transit score, walking distance to nearest stop, number of lines, etc.)?
+  - Public transit score.
 - Will there be additional UI elements (map overlays, transit icons) to make this visible?
+  - No.
 - Is public accessibility a filter, a sort option, or both?
+  - Filter.
 
