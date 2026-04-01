@@ -214,7 +214,43 @@
 
 ---
 
-## Future Workflow 7: Find imaging centers that are most publicly accessible
+## Workflow 7: Find imaging centers that accept specific insurance
+
+**User story**: As a physician, I want to find imaging centers that accept specific insurance so that the patient's care can be covered.
+
+**Step-by-step actions**
+1. Physician opens the app.
+2. In the **Parameters Section**, physician:
+   - Enters **Patient address** (required) and optionally **Target address** to set geographic context.
+3. In **Modalities** (multi-select), physician:
+   - Selects one or more modalities required for the order so that only relevant centers are considered.
+4. In **Insurance** (multi-select field):
+   - Physician selects one or more insurance plans that the patient has (e.g., "BigHealth PPO", "StateCare Gold").
+5. In **Minimum rating**, physician:
+   - Sets a preferred quality threshold.
+6. For **Offers referral bonus**, physician:
+   - Leaves it unchecked or checked depending on whether incentives should further filter eligible centers.
+7. In the **Sorting Section**, physician:
+   - Prioritizes **"Distance from patient (lowest first)"** or **"Patient Satisfaction (highest first)"** as desired.
+8. Physician clicks the **Search** button or presses Enter in a text field to trigger the search.
+9. **Matching Imaging Centers** updates:
+   - Cards display **Modalities served**, **Referral bonus**, **Turnaround time**, and (implicitly) only those centers that accept at least one of the selected insurance plans.
+10. Physician scans the cards to confirm:
+   - Selected insurance is accepted for each center.
+   - Modalities, distance, and rating meet requirements.
+11. Physician chooses a center that meets clinical and coverage needs and proceeds with the referral.
+
+**Open questions / more information needed**
+- Should centers be shown if they accept **any** of the selected insurance plans or must they accept **all**?
+  - Any.
+- How is accepted insurance represented on the card (logos, plan names, both)?
+  - Plan names only, as a text list.
+- Is there a way to mark certain insurance-center combinations as out-of-network or partially covered?
+  - Not in scope.
+
+---
+
+## Future Workflow 8: Find imaging centers that are most publicly accessible
 
 **User story (future scope)**: As a physician, I want to find imaging centers that are most publicly accessible so that patients can use public transportation to travel to their appointment.
 

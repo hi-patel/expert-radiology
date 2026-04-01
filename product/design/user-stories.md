@@ -7,7 +7,7 @@
 - As a physician, I want to find imaging centers with quicker turnaround times so that patient's with more serious problems can be take care of sooner.
 - As a physician, I want to find imaging centers that provide the highest referral fees so that I can get maximize ROI.
 - As a physician, I want to find imaging centers that provide specific modalities so that I can be sure they can serve my patient.
-
+- As a physician, I want to find imaging centers that accept specific insurance so that the patient's care can be covered.
 
 # Future Scope
 - As a physician, I want to find imaging centers that are most publicly accessible, measured by a public transit score, so that patients can use public transportation to travel to their appointment.

@@ -17,6 +17,7 @@ This panel will contain search parameters.
       - "1+"
     - Checkbox field for "Offers referral bonus" (filters strictly to bonus-offering centers when checked)
     - (Future scope) Filter for "Public transit accessibility" using a public transit score
+    - Multiselect field for "Insurance"
   - Sorting Section
     - Three rows of multi-select fields. Each field has the same options on what to sort results by:
       - "Distance from patient (lowest first)"
