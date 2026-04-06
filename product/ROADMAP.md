@@ -45,6 +45,9 @@ We incorporate imaging center matching directly into physician's clinical workfl
 - Vendor integrations. Have the ability to import imaging centers from third-party vendors instead of maintaining our own list.
 - AI-powered imaging center prioritization. Over time, we may see a small subset of imaging centers dominating the results and would make it harder for other centers to get business. We can use AI to help re-prioritize results to help those other centers.
 - A map for visual cues.
+- Patient Facing platform
+- Sponsored listings with ad tech concepts (real-time bidding, competitive exclusion, etc)
+- Additional filters: Physician ratings, ExRad partner (yes/no), My Patient Rating
 
 # Definition of Success
 80% of physicians in our network are using full automation. 80% of all patients in a partner location are being scheduled to imaging centers based on suggetions from our platform.
