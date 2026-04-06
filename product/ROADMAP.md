@@ -47,6 +47,7 @@ We incorporate imaging center matching directly into physician's clinical workfl
 - A map for visual cues.
 - Patient Facing platform
 - Sponsored listings with ad tech concepts (real-time bidding, competitive exclusion, etc)
+- Additional filters: Physician ratings, ExRad partner (yes/no), My Patient Rating
 
 # Definition of Success
 80% of physicians in our network are using full automation. 80% of all patients in a partner location are being scheduled to imaging centers based on suggetions from our platform.
